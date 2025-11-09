@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [personId, setPersonId] = useState(null);
+  const [person, setPerson] = useState(null);
+
+  useEffect(() => {
+    if (!personId) {
+      setPerson(null);
+      return;
+    }
+
+    fetch(`/api/people/${personId}`)
+      .then((res) => res.json())
+      .then((data) => setPerson(data));
+  }, [personId]);
 
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <button onClick={() => setPersonId(1)}>Person 1</button>
+        <button onClick={() => setPersonId(2)}>Person 2</button>
+        <button onClick={() => setPersonId(null)}>Clear</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div>
+        <h1>
+          {person?.firstName} {person?.lastName}
+        </h1>
+        {person && (
+          <>
+            <p>{person?.age}</p>
+            <p>{person?.city}</p>
+            <p>{person?.country}</p>
+            <p>{person?.email}</p>
+            <p>{person?.phone}</p>
+            <p>{person?.website}</p>
+          </>
+        )}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
