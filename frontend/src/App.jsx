@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import "./App.css";
 
 function App() {
@@ -19,7 +18,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div style={{ display: "flex", gap: "10px" }}>
         <button onClick={() => setPersonId(1)}>Person 1</button>
         <button onClick={() => setPersonId(2)}>Person 2</button>
         <button onClick={() => setPersonId(null)}>Clear</button>
