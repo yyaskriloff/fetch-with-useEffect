@@ -19,8 +19,8 @@ function App() {
   return (
     <>
       <div style={{ display: "flex", gap: "10px" }}>
-        <button onClick={() => setPersonId(1)}>Person 1</button>
-        <button onClick={() => setPersonId(2)}>Person 2</button>
+        <button onClick={() => setPersonId(1)}>John Doe</button>
+        <button onClick={() => setPersonId(2)}>Jane Doe</button>
         <button onClick={() => setPersonId(null)}>Clear</button>
       </div>
       <div>
