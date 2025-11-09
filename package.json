@@ -1,0 +1,19 @@
+{
+  "name": "fetch-with-useeffect",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yyaskriloff/fetch-with-useEffect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yyaskriloff/fetch-with-useEffect/issues"
+  },
+  "homepage": "https://github.com/yyaskriloff/fetch-with-useEffect#readme",
+  "description": ""
+}
