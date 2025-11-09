@@ -26,7 +26,7 @@ const people = {
 const server = http.createServer(async (req, res) => {
   if (req.url === "/api/people/1") {
     const person = people[1];
-    await new Promise((resolve) => setTimeout(resolve, 1000 * 10));
+    await new Promise((resolve) => setTimeout(resolve, 1000 * 5));
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(person));
     return;
